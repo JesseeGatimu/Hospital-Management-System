@@ -1,0 +1,18 @@
+<h2>Make Payment</h2>
+
+<p>Patient: {{ invoice.patient }}</p>
+<p>Balance: {{ invoice.balance }}</p>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <input type="number" name="amount" placeholder="Amount"><br>
+
+  <select name="method">
+    <option value="cash">Cash</option>
+    <option value="mpesa">M-Pesa</option>
+    <option value="card">Card</option>
+  </select><br>
+
+  <button type="submit">Pay</button>
+</form>

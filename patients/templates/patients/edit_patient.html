@@ -1,0 +1,11 @@
+    <h2>Edit Patient</h2>
+     <form method="post">
+      {% csrf_token %}
+      <input type="text"   name="first_name" placeholder="first name" value="{{patient.first_name}}"><br>
+      <input type="text"  placeholder="last name" name="last_name" value="{{patient.last_name}}"><br>
+      <input type="text"  placeholder="gender" name="gender" value="{{patient.gender}}"><br>
+      <input type="text"  placeholder="phone" name="phone" value="{{patient.phone}}"><br>
+      <input type="text" name="age"  placeholder="age" value="{{age}}"><br>
+      <textarea name="address"  placeholder="address" >{{patient.address}}</textarea><br>
+      <button type="submit">Update</button>
+    </form>

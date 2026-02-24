@@ -1,0 +1,30 @@
+<h2>Add Appointment</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Patient :</label>
+    <select name="patient">
+        {% for patient in patients %}
+         <option value="{{patient.id}}">{{patient}}</option>
+        {% endfor %}
+    </select><br>
+    <label>Doctor:</label>
+    <select name="doctor">
+       {% for doctor in doctors %}
+        <option value="{{ doctor.id }}">{{ doctor.username }}</option>
+       {% endfor %}
+    </select><br>
+     <label>Date:</label>
+  <input type="datetime-local" name="date"><br>
+
+  <label>Status:</label>
+  <select name="status">
+    <option value="pending">Pending</option>
+    <option value="completed">Completed</option>
+    <option value="cancelled">Cancelled</option>
+  </select><br>
+
+  <label>Notes:</label>
+  <textarea name="notes"></textarea><br>
+
+  <button type="submit">Save</button>
+</form>

@@ -1,0 +1,11 @@
+<h2>Create Invoice</h2>
+<form method="post">
+    {% csrf_token %}
+    <select name="patients">
+        {% for patient in patients %}
+          <option value="{{patient.id}}">{{patient}}</option>
+        {% endfor %}
+    </select><br>
+    <input type="number" name="total_amount" placeholder="Total Amount"><br>
+    <button type="submit">Create</button>
+</form>

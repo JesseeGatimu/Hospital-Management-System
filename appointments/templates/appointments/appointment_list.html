@@ -1,0 +1,11 @@
+<h2>Appointments</h2>
+<a href="{% url 'add_appointments' %}">Add Appointment</a>
+<ul>
+    {% for appointment in appointments %}
+      <li>
+        {{appointment.patient}}-{{appointment.doctor}} {{appointment.date}} {{appointment.status}}
+      </li>
+    {% empty %}
+      <p>No Appointments</p>
+    {% endfor %}
+</ul>
